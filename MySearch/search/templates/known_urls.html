@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NOT GOOGLE SEARCH</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">NOT GOOGLE SEARCH</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../">Search</a></li>
+            <li><a href="../indexing_view">Index URLs</a></li>
+            <li class="active"><a href="">Known URLs</a></li>
+            <li><a href="../params_view">Control</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <br> <br>
+
+    <div class="container">
+
+      <div class="starter-template" align="left">
+        <h1>URL List (Click on url to see list of words and count)</h1>
+      </div>
+
+      <div align="left">
+        <form  method="GET" action="">
+            <br> <br>
+            <input type="submit" name="update" value="Update and Show" style="width: 25%; height: 50px; font-size: 25px" >
+        </form>
+      </div>
+      <hr style="background-color: black; height: 2px;">
+
+        {% for url in urls %}
+          {{forloop.counter}})
+          <a href="../words_view?id={{url.id}}">{{url.url}}</a> <br>
+        {% endfor %}
+
+    </div>
+  </body>
+</html>

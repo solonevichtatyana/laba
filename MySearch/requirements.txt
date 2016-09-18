@@ -1,0 +1,7 @@
+Gunicorn
+psycopg2==2.5.3
+BeautifulSoup
+langdetect
+validators
+whitenoise
+django

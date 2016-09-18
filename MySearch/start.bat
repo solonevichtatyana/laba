@@ -1,0 +1,1 @@
+"C:\Pyton27\python.exe" -c "cd C:\Users\Tanya\Desktop\Python_Labs\lab3\MySearch" -c "manage.py runserver"
